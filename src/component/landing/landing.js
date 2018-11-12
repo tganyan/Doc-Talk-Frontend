@@ -69,17 +69,17 @@ class Landing extends React.Component {
 }
 
 const mapStateToProps = state =>({
-    // token: state.token,
+    token: state.token,
 });
 
 const mapDispatchToProps = dispatch => ({
     pDoSignUp: user => dispatch(authActions.signupRequest(user)),
-    pDoLoginIn: user => dispatch(authActions.loginRequest(user)),
+    pDoLogin: user => dispatch(authActions.loginRequest(user)),
 
 });
 
 Landing.propTypes = {
-    // token: PropTypes.string,
+    token: PropTypes.string,
     pDoSignUp: PropTypes.func,
     pDoLoginIn:PropTypes.func,
     location: PropTypes.object,
