@@ -27,7 +27,6 @@ class Landing extends React.Component {
     };
 
     render() {
-
         const rootJSX = <div>
             <Link to='/'><h2>Welcome to DocTalk!</h2></Link>
             <Link to='/signup'>Sign up for DocTalk</Link>
@@ -57,6 +56,8 @@ class Landing extends React.Component {
         </div>;
 
         const { location } = this.props;
+        console.log(location);
+
         return (
             <section>
                 { location.pathname === routes.ROOT ? rootJSX : undefined }
@@ -68,7 +69,7 @@ class Landing extends React.Component {
 }
 
 const mapStateToProps = state =>({
-
+    // token: state.token,
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -78,6 +79,7 @@ const mapDispatchToProps = dispatch => ({
 });
 
 Landing.propTypes = {
+    // token: PropTypes.string,
     pDoSignUp: PropTypes.func,
     pDoLoginIn:PropTypes.func,
     location: PropTypes.object,
