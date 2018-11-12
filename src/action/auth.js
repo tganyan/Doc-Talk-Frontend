@@ -11,8 +11,7 @@ export const remove = () => ({
 });
 
 export const signupRequest = user => (store) => {
-  console.log(`${API_URL}${routes.SIGNUP}, ${user}`);
-    return superagent.post(`${API_URL}${routes.SIGNUP}`) // eslint-disable-line
+    return superagent.post(`${API_URL}${routes.BACKEND_SIGNUP}`) // eslint-disable-line
     .send(user)
   // .withCredentials()
     .then((response) => {
@@ -21,7 +20,7 @@ export const signupRequest = user => (store) => {
 };
 
 export const loginRequest = user => (store) => {
-    return superagent.get(`${API_URL}${routes.LOGIN}`) // eslint-disable-line
+    return superagent.get(`${API_URL}${routes.BACKEND_LOGIN}`) // eslint-disable-line
     .auth(user.username, user.password)
   // .withCredentials()
     .then((response) => {

@@ -18,6 +18,8 @@ class App extends React.Component {
                         <Route exact path='/signup' component={Landing}/>
                         <Route exact path='/login' component={Landing}/>
                         <Route exact path='/dashboard' component={Dashboard}/>
+                        <Route exact path='/account' component={Dashboard}/>
+                        <Route exact path='/aboutus' component={Landing}/>
                     </div>
                 </BrowserRouter>
             </div>
