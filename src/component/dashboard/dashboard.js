@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import SymptomsForm from '../symptom-form/sympton-form';
 
 
 class Dashboard extends React.Component {
