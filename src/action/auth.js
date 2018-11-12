@@ -11,7 +11,7 @@ export const remove = () => ({
 });
 
 export const signupRequest = user => (store) => {
-  console.log(`${API_URL}${routes.SIGNUP_BACKEND}, ${user}`);
+  console.log(`${API_URL}${routes.SIGNUP}, ${user}`);
     return superagent.post(`${API_URL}${routes.SIGNUP}`) // eslint-disable-line
     .send(user)
   // .withCredentials()
