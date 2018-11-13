@@ -1,37 +1,53 @@
 import React from 'react';
-
-const symptomMap = new Map();
-
-symptomMap.set('Abdominal pain', 10);
-symptomMap.set('Absence of a pulse', 984);
-symptomMap.set('Blood in stool', 190);
-symptomMap.set('Chills', 175);
-symptomMap.set('Diarrhea', 50);
-symptomMap.set('Dizziness', 207);
-symptomMap.set('Eye redness', 33);
-symptomMap.set('Fever', 11);
-symptomMap.set('Hallucination', 976);
-symptomMap.set('Joint pain', 27);
+import Symptoms from '../symptoms/symptoms';
+import searchActions from '../../action/search';
 
 class SymptomForm extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+    this.state.symptomKeys = [];
+  }
+
+  handleChange = (event) => {
+    event.preventDefault();
+    const { name, value } = event.target;
+    this.setState({[name]: value});
+  };
+
+  handleSubmit = (event) => {
+    event.preventDefault();
+    const query = ``;
+    return this.props.pTriggerDiagnosis(query)
+      .then(() => {
+
+      })
+  };
+
   render() {
     return (
-      <form>
+      <form onSubmit={this.handleSubmit}>
+        <h2>Get a Diagnosis</h2>
         <input
           name="gender"
           placeholder="gender"
+          onChange={this.handleChange}
         />
         <input
           name="age"
           placeholder="age"
+          onChange={this.handleChange}
         />
-        <input
-          name="Abdominal pain"
-          type="checkbox"
-        />
+        <h3>Possible Symptoms</h3>
+        <Symptoms/>
+        <button type='submit'>Get your diagnosis</button>
       </form>
     );
   }
 }
+
+const mapDispatchToProps = dispatch => ({
+  pTriggerDiagnosis: query => dispatch(searchActions.searchSymptoms(query)),
+});
 
 export default SymptomForm;
