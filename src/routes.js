@@ -10,4 +10,5 @@ export const LOGIN = '/login';
 export const ROOT = '/';
 export const DASHBOARD = '/dashboard';
 export const ABOUT_US = '/aboutus';
-export const DIAGNOSIS = '';
+export const DIAGNOSIS = '/';
+export const DIAGOSIS_LIST = '/diagnosislist';
