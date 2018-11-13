@@ -9,7 +9,6 @@ class DiagnosisList extends React.Component {
     return (
       <section>
         <h3>Possible Diagnosis ranked in order of likelihood</h3>
-        {/* {this.props.diagnosisResults.map((currentDiagnosis, i) => <Diagnosis */}
         {this.props.diagnosisResults.map((currentDiagnosis, i) => <Diagnosis
           currentDiagnosis={currentDiagnosis}
           key={i}
@@ -21,7 +20,7 @@ class DiagnosisList extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    diagnosisResults: state,
+    diagnosisResults: state.search,
   };
 };
 
