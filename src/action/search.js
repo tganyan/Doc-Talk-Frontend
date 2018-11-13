@@ -10,6 +10,13 @@ export const searchSymptoms = query => (store) => {
   return superagent.post(`${API_URL}${routes.DIAGNOSIS}`) // eslint-disable-line
     .send(query)
     .then((response) => {
-      return store.dispatch(set(response.text));
+      return store.dispatch(set(response.body));
+    });
+};
+
+export const getToken = () => (store) => {
+  return superagent.get(`${API_URL}${routes.DIAGNOSIS}`) // eslint-disable-line
+    .then((response) => {
+      return store.dispatch(set(response.body));
     });
 };
