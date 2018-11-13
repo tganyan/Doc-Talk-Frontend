@@ -7,6 +7,8 @@ import * as routes from '../../routes';
 import * as authActions from '../../action/auth';
 import AuthForm from '../auth-form/auth-form';
 
+import './landing.scss';
+
 
 class Landing extends React.Component {
 
@@ -27,7 +29,7 @@ class Landing extends React.Component {
     };
 
     render() {
-        const rootJSX = <div>
+        const rootJSX = <div className="auth-container">
             <Link to='/signup'>Sign up for DocTalk</Link>
             <Link to='/login'>Login to DocTalk</Link>
         </div>;
