@@ -22,7 +22,7 @@ class App extends React.Component {
                 <Link to='/aboutus'><li>About Us</li></Link>
               </ul>
             </nav>
-            <div style={{ padding: '20px' }}>
+            <div>
               <Route path ='*' component={AuthRedirect}/>
               <Route exact path='/' component={Landing}/>
               <Route exact path='/signup' component={Landing}/>
