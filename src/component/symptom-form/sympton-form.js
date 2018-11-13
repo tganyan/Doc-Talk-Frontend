@@ -56,8 +56,7 @@ class SymptomForm extends React.Component {
 
     return this.props.pGetDiagnosis(query)
       .then((response) => {
-        console.log(response);
-        console.log(this.props);
+        console.log(this.props.mediToken);
       })
       .catch(error => {
         console.error(error);
@@ -94,6 +93,6 @@ const mapDispatchToProps = dispatch => ({
 });
 
 const mapStateToProps = state => ({
-  mediToken: state.search,
+  mediToken: state,
 });
 export default connect(mapStateToProps, mapDispatchToProps)(SymptomForm);
