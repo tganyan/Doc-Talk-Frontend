@@ -28,13 +28,11 @@ class Landing extends React.Component {
 
     render() {
         const rootJSX = <div>
-            <Link to='/'><h2>Welcome to DocTalk!</h2></Link>
             <Link to='/signup'>Sign up for DocTalk</Link>
             <Link to='/login'>Login to DocTalk</Link>
         </div>;
 
         const signUpJSX = <div>
-            <Link to='/'><h2>DocTalk</h2></Link>
             <h3>Sign Up</h3>
             <AuthForm
                 type='signup'
@@ -45,7 +43,6 @@ class Landing extends React.Component {
         </div>;
 
         const loginJSX = <div>
-            <Link to='/'><h2>DocTalk</h2></Link>
             <h3>Login</h3>
             <AuthForm
                 type='login'
