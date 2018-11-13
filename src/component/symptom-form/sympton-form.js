@@ -36,25 +36,26 @@ class SymptomForm extends React.Component {
     const gender = document.querySelector('input[name=gender]').value;
     let mediToken = null;
     const currentDate = new Date();
-    const currentTime = currentDate;
+    const tokenTime = Math.floor(currentDate.getTime() / 1000);
+    const expirationTarget = tokenTime + this.props.mediToken.expTime;
 
     if (this.props.mediToken !== null) {
-      if (currentTime - this.props.mediToken.timeStamp === 0) {
+      if (expirationTarget < Math.floor(new Date().getTime() / 1000)) {
         mediToken = this.props.mediToken.token;
       } else {
-        pGetMediToken();
+        this.props.pRefreshMediToken();
         mediToken = this.props.mediToken.token;
       }
     } else {
-      pGetMediToken();
+      this.props.pGetMediToken();
       mediToken = this.props.mediToken.token;
     }
 
     const query = `https://sandbox-healthservice.priaid.ch/diagnosis?symptoms=${symptoms}&gender=${gender}&year_of_birth=${age}&token=${mediToken}&language=en-gb`;
 
     return this.props.pTriggerDiagnosis(query)
-      .then(() => {
-        this.props.resultsReady = true;
+      .then((response) => {
+        this.state.results = response;
       })
       .catch(console.error(error));
   };
@@ -83,8 +84,9 @@ class SymptomForm extends React.Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-  pGetDiagnosis: query => dispatch(searchActions.searchSymptoms(query)),
-  pGetMediToken: () => dispatch(searchActions.searchSymptoms()),
+  pGetDiagnosis: query => dispatch(searchActions.pSearchSymptoms(query)),
+  pGetMediToken: () => dispatch(searchActions.pGetToken()),
+  pRefreshMediToken: () => dispatch(searchActions.pRefreshToken()),
 });
 
 export default SymptomForm;
