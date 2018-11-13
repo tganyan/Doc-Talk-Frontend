@@ -10,6 +10,7 @@ class Dashboard extends React.Component {
             <section>
                 <Link to='/'><h2>DocTalk</h2></Link>
                 <p>Hello! You are logged in</p>
+                <SymptomsForm/>
             </section>
     );
   }
