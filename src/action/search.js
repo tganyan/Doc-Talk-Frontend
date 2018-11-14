@@ -27,6 +27,9 @@ export const pGetToken = () => (store) => {
   return superagent.get(`${API_URL}${routes.BACKEND_GET_TOKEN}`) // eslint-disable-line
     .then((response) => {
       return store.dispatch(getToken(response.body));
+    })
+    .catch((error) => {
+      console.error('pGetToken catch', error);
     });
 };
 
