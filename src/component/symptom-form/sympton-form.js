@@ -2,6 +2,7 @@ import React from 'react';
 import Symptoms from '../symptoms/symptoms';
 import * as searchActions from '../../action/search';
 import { connect } from 'react-redux';
+import '../symptom-form/symptom-form.scss';
 
 class SymptomForm extends React.Component {
   constructor(props) {
@@ -67,7 +68,9 @@ class SymptomForm extends React.Component {
 
     return (
       <form onSubmit={this.handleSubmit}>
-        <h2>Get a Diagnosis</h2>
+        <h2 className='titleOnForm'>Get a Diagnosis</h2>
+         {/*<h4>Possible Symptoms</h4>*/}
+        <Symptoms/>
         <input
           name="gender"
           placeholder="gender"
@@ -78,9 +81,7 @@ class SymptomForm extends React.Component {
           placeholder="age"
           onChange={this.handleChange}
         />
-        <h3>Possible Symptoms</h3>
-        <Symptoms/>
-        <button type='submit'>Get your diagnosis</button>
+        <button className='buttonStyle' type='submit'>Get your diagnosis</button>
       </form>
     );
   }

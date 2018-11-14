@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import SymptomsForm from '../symptom-form/sympton-form';
-
+import '../landing/landing.scss';
+import './dashboard.scss';
 
 class Dashboard extends React.Component {
   constructor(props) {
@@ -12,10 +13,10 @@ class Dashboard extends React.Component {
   render() {
     return (
       <section>
-        <Link to='/'><h2>DocTalk</h2></Link>
-        <p>Hello! You are logged in</p>
+        <p className='title'>Hello! You are logged in</p>
         <SymptomsForm/>
       </section>
+
     );
   }
 }

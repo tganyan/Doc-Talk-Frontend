@@ -1,4 +1,5 @@
 import React from 'react';
+import './symptoms.scss';
 
 const symptomsArray = [
   {
@@ -46,6 +47,7 @@ const symptomsArray = [
 class SymptomsList extends React.Component {
   render() {
     return (
+        <div className='symptomsForm'>
       <ul>
         { symptomsArray.map(currentSymptom => <li key={currentSymptom.id}>
               <label htmlFor={currentSymptom.name}>{currentSymptom.name}</label>
@@ -56,6 +58,7 @@ class SymptomsList extends React.Component {
               />
             </li>)}
       </ul>
+        </div>
     );
   }
 }

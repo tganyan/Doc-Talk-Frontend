@@ -29,28 +29,28 @@ class Landing extends React.Component {
     };
 
     render() {
-        const rootJSX = <div className="auth-container">
-            <Link to='/signup'>Sign up for DocTalk</Link>
-            <Link to='/login'>Login to DocTalk</Link>
+        const rootJSX = <div className='auth-container'>
+            <Link to='/signup'><p>Sign up for DocTalk</p></Link>
+            <Link to='/login'><p>Login to DocTalk</p></Link>
         </div>;
 
-        const signUpJSX = <div>
-            <h3>Sign Up</h3>
+        const signUpJSX = <div className='formStyle'>
+            <h3 className='loginsignupH3'>Sign Up</h3>
             <AuthForm
                 type='signup'
                 onComplete={this.handleSignup}
             />
-            <p>Already have an account?</p>
+            <p className='account'>Already have an account?</p>
             <Link to='/login'> Login to DocTalk</Link>
         </div>;
 
-        const loginJSX = <div>
-            <h3>Login</h3>
+        const loginJSX = <div className='formStyle'>
+            <h3 className='loginsignupH3'>Login</h3>
             <AuthForm
                 type='login'
                 onComplete={this.handleLogin}
             />
-            <p>Do not have an account?</p>
+            <p className='account'>Do not have an account?</p>
             <Link to='/signup'>Sign up for DocTalk</Link>
         </div>;
 

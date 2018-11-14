@@ -1,0 +1,35 @@
+.formStyle{ // this is the border box of the login/signup form
+  height:370px;
+  width: 300px;
+  border: solid black;
+  border-size: 1px;
+  position: absolute;
+  right:0;
+  left:0;
+  margin: 100px auto auto;
+  a {
+    margin: auto auto auto 15%;
+  }
+
+}
+
+form input { // input box on signup and login
+  margin-top:10px;
+  width: 200px;
+  height: 30px;
+  margin-left: 15%;
+}
+
+.button{ // button for signup and login in
+  background: #fff;
+  height: 30px;
+  width: 207px;
+  border: 1px solid #000;
+  margin-left: 15%;
+  margin-top:20px;
+}
+.account {
+  margin-top:30px;
+  margin-left:15%;
+
+}
