@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "webpack-dev-server --config webpack.dev.js"
+    "watch": "webpack-dev-server --config webpack.dev.js",
+    "start": "node index.js",
+    "heroku-postbuild": "webpack --progress --config webpack.prod.js"
   },
   "keywords": [],
   "author": "",
