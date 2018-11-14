@@ -1,14 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-
 const emptyState = {
     username: '',
     email: '',
     password: '',
 
 };
-
 
 class AuthForm extends React.Component {
     constructor(props) {
@@ -24,6 +22,7 @@ class AuthForm extends React.Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
+        console.log('we are here');
         this.props.onComplete(this.state);
         this.setState(emptyState);
     };
@@ -44,7 +43,7 @@ class AuthForm extends React.Component {
         return(
             <div className="formLayout">
                 <form onSubmit={this.handleSubmit}>
-                    <input className="signUp"
+                    <input id='authFormUsername' className="signUp"
                            name='username'
                            placeholder='username'
                            type='text'
@@ -52,7 +51,6 @@ class AuthForm extends React.Component {
                            onChange={this.handleChange}
                     />
                     { type !== 'login' ? signupJSX : undefined }
-
                     <input className="signUp"
                            name='password'
                            placeholder='password'
