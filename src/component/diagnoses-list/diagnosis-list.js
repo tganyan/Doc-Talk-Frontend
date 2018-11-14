@@ -21,7 +21,7 @@ class DiagnosisList extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    diagnosisResults: state,
+    diagnosisResults: state.search,
   };
 };
 
