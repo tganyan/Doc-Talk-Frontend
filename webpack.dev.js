@@ -1,47 +1,34 @@
-require('dotenv').config();
+const merge = require('webpack-merge');
+const common = require('./webpack.common.js');
+const { HotModuleReplacementPlugin } = require('webpack');
 
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { DefinePlugin } = require('webpack');
+const webpackDevConfig = {};
 
-const webpackConfig = module.exports = {};
+webpackDevConfig.mode = 'development';
 
-webpackConfig.mode = 'development';
+webpackDevConfig.devtool = 'inline-source-map';
 
-webpackConfig.entry = `${__dirname}/src/main.js`;
-
-webpackConfig.output = {
-  filename: '[name].[hash].js',
-  path: `${__dirname}/build`,
-  publicPath: process.env.CDN_URL,
+webpackDevConfig.devServer = {
+  contentBase: './build',
+  open: true,
+  hot: true,
+  historyApiFallback: true,
 };
 
-webpackConfig.plugins = [
-  new HtmlWebpackPlugin({
-    title: '',
-  }),
-  new DefinePlugin({
-    API_URL: JSON.stringify(process.env.API_URL),
-  }),
+webpackDevConfig.plugins = [
+  new HotModuleReplacementPlugin(),
 ];
 
-webpackConfig.module = {};
-webpackConfig.module.rules = [
+webpackDevConfig.module = {};
+webpackDevConfig.module.rules = [
   {
-    test: /\.(png|svg|jpg|gif)$/,
+    test: /\.s?css$/,
     use: [
-      'file-loader',
+      'style-loader',
+      'css-loader',
+      'sass-loader',
     ],
   },
-  {
-    test: /\.js$/,
-    exclude: /node_modules/,
-    use: {
-      loader: 'babel-loader',
-      options: {
-        presets: ['@babel/preset-env', '@babel/react'],
-        plugins: ['@babel/plugin-proposal-class-properties', '@babel/plugin-proposal-object-rest-spread'],
-        cacheDirectory: true,
-      },
-    },
-  },
 ];
+
+module.exports = merge(common, webpackDevConfig);
