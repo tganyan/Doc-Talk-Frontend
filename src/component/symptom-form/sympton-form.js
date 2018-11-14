@@ -1,7 +1,9 @@
 import React from 'react';
 import Symptoms from '../symptoms/symptoms';
+import PropTypes from 'prop-types';
 import * as searchActions from '../../action/search';
 import { connect } from 'react-redux';
+import * as routes from '../../routes';
 
 class SymptomForm extends React.Component {
   constructor(props) {
@@ -55,8 +57,10 @@ class SymptomForm extends React.Component {
     const query = `https://sandbox-healthservice.priaid.ch/diagnosis?symptoms=${symptoms}&gender=${gender}&year_of_birth=${age}&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6Imphc29uaGlAY3JhenlyZWRoZWFkLmNvbSIsInJvbGUiOiJVc2VyIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvc2lkIjoiNDIyMiIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvdmVyc2lvbiI6IjIwMCIsImh0dHA6Ly9leGFtcGxlLm9yZy9jbGFpbXMvbGltaXQiOiI5OTk5OTk5OTkiLCJodHRwOi8vZXhhbXBsZS5vcmcvY2xhaW1zL21lbWJlcnNoaXAiOiJQcmVtaXVtIiwiaHR0cDovL2V4YW1wbGUub3JnL2NsYWltcy9sYW5ndWFnZSI6ImVuLWdiIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9leHBpcmF0aW9uIjoiMjA5OS0xMi0zMSIsImh0dHA6Ly9leGFtcGxlLm9yZy9jbGFpbXMvbWVtYmVyc2hpcHN0YXJ0IjoiMjAxOC0xMS0xMSIsImlzcyI6Imh0dHBzOi8vc2FuZGJveC1hdXRoc2VydmljZS5wcmlhaWQuY2giLCJhdWQiOiJodHRwczovL2hlYWx0aHNlcnZpY2UucHJpYWlkLmNoIiwiZXhwIjoxNTQyMTU3Nzg1LCJuYmYiOjE1NDIxNTA1ODV9.ioCSwKmOqjjiA6qaFeHp2CaKa6rwUEVPYB278_FqvL8&format=json&language=en-gb`;
 
     return this.props.pGetDiagnosis(query)
-      .then((response) => {
+      .then(() => {
         console.log(this.props.mediToken);
+        console.log(this.props);
+        this.props.history.push(routes.DIAGOSIS_LIST);
       })
       .catch(error => {
         console.error(error);
@@ -95,4 +99,9 @@ const mapDispatchToProps = dispatch => ({
 const mapStateToProps = state => ({
   mediToken: state,
 });
+
+SymptomForm.propTypes= {
+  history: PropTypes.object,
+};
+
 export default connect(mapStateToProps, mapDispatchToProps)(SymptomForm);
