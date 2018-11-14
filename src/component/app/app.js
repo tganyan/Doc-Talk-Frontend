@@ -4,24 +4,21 @@ import { BrowserRouter, Route, Link } from 'react-router-dom';
 import Landing from '../landing/landing';
 import Dashboard from '../dashboard/dashboard';
 import AboutUs from '../aboutus/aboutus';
-import Account from '../user-account/user-account';
 import AuthRedirect from '../auth-redirect/auth-redirect';
 import DiagnosisList from '../diagnoses-list/diagnosis-list';
 
 class App extends React.Component {
   render() {
     return (
-      <div>
+      <div className='bigWhiteBox'>
         <BrowserRouter>
           <React.Fragment>
-            <Link to='/'><h2>DocTalk</h2></Link>
-            <nav>
+            <nav className='navStyle'>
               <ul>
+                  <Link to='/'><header>DocTalk</header></Link>
                 <Link to='/'><li>Home</li></Link>
-                <Link to='/chatroomlist'><li>Chatrooms</li></Link>
                 <Link to='/account'><li>Account</li></Link>
                 <Link to='/aboutus'><li>About Us</li></Link>
-                <Link to='/diagnosislist'><li>List</li></Link>
               </ul>
             </nav>
             <div style={{ padding: '20px' }}>

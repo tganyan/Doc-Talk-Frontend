@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
+import '../auth-form/auth-form.scss';
 
 const emptyState = {
     username: '',
@@ -60,7 +60,7 @@ class AuthForm extends React.Component {
                            value={this.state.password}
                            onChange={this.handleChange}
                     />
-                    <button type='submit'>{type}</button>
+                    <button className='button' type='submit'>{type}</button>
                 </form>
             </div>
         );
