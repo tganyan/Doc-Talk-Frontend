@@ -22,7 +22,7 @@ class Dashboard extends React.Component {
       <section>
 
         <p className='title'>Hello! You are logged in</p>
-        <SymptomsForm/>
+        {/* <SymptomsForm/> */}
 
         <Link to='/'><h2>DocTalk</h2></Link>
         <p>Hello! You are logged in</p>

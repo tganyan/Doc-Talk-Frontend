@@ -14,11 +14,11 @@ class App extends React.Component {
         <BrowserRouter>
           <React.Fragment>
             <nav className='navStyle'>
+              <header>DocTalk</header>
               <ul>
-                  <Link to='/'><header>DocTalk</header></Link>
-                <Link to='/'><li>Home</li></Link>
-                <Link to='/account'><li>Account</li></Link>
-                <Link to='/aboutus'><li>About Us</li></Link>
+                <li><Link to='/'>Home</Link></li>
+                <li><Link to='/account'>Account</Link></li>
+                <li><Link to='/aboutus'>About Us</Link></li>
               </ul>
             </nav>
             <div style={{ padding: '20px' }}>

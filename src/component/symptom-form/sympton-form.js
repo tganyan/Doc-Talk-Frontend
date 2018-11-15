@@ -3,7 +3,7 @@ import Symptoms from '../symptoms/symptoms';
 import PropTypes from 'prop-types';
 import * as searchActions from '../../action/search';
 import { connect } from 'react-redux';
-<
+
 import '../symptom-form/symptom-form.scss';
 
 import * as routes from '../../routes';
@@ -89,17 +89,19 @@ class SymptomForm extends React.Component {
         <h2 className='titleOnForm'>Get a Diagnosis</h2>
          {/*<h4>Possible Symptoms</h4>*/}
         <Symptoms/>
-        <input
-          name="gender"
-          placeholder="gender"
-          onChange={this.handleChange}
-        />
-        <input
-          name="age"
-          placeholder="age"
-          onChange={this.handleChange}
-        />
-        <button className='buttonStyle' type='submit'>Get your diagnosis</button>
+        <div className='diagnosisSubmit'>
+          <input
+            name="gender"
+            placeholder="gender"
+            onChange={this.handleChange}
+          />
+          <input
+            name="age"
+            placeholder="age"
+            onChange={this.handleChange}
+          />
+          <button className='buttonStyle' type='submit'>Get your diagnosis</button>
+        </div>
       </form>
     );
   }
