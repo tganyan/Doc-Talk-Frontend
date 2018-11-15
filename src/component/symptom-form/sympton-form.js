@@ -47,15 +47,17 @@ class SymptomForm extends React.Component {
 
     return this.props.pGetMediToken()
       .then((returnedMediToken) => {
-        console.log('response', returnedMediToken);
         mediToken = returnedMediToken;
         const mediTokenExpiration = parseInt(returnedMediToken.payload.expTime);
         console.log('exp time', mediTokenExpiration);
         if (mediTokenExpiration < currentTimeInSeconds) {
           return this.props.pRefreshMediToken()
             .then(() => {
-              mediToken = this.props.mediToken.token;
-              returnedMediToken = JSON.parse(mediToken);
+              return this.props.pGetMediToken(event)
+                .then((freshMediToken) => {
+                  mediToken = freshMediToken;
+                  return mediToken;
+                })
             })
             .catch((error) => {
               console.error(error);
@@ -66,7 +68,6 @@ class SymptomForm extends React.Component {
         }
       })
       .then((finalMediToken) => {
-        console.log('end of call', finalMediToken);
         const query = `https://sandbox-healthservice.priaid.ch/diagnosis?symptoms=${symptoms}&gender=${gender}&year_of_birth=${age}&token=${finalMediToken.payload.token}&format=json&language=en-gb`;
 
         return this.props.pGetDiagnosis(query)
