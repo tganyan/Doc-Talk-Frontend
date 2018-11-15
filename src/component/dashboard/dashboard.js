@@ -23,9 +23,6 @@ class Dashboard extends React.Component {
 
         <p className='title'>Hello! You are logged in</p>
         {/* <SymptomsForm/> */}
-
-        <Link to='/'><h2>DocTalk</h2></Link>
-        <p>Hello! You are logged in</p>
         <SymptomsForm
           history={this.props.history}
         />
