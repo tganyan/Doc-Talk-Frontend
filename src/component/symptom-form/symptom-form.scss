@@ -3,8 +3,13 @@
    height: 30px;
    width: 400px;
    border: 1px solid #000;
-   margin-left: 25%;
+   margin: 3% auto;
+   display: block;
 }
 .titleOnForm {
-   margin-top:80px;
+   margin: 15% 0 3% 0;
+}
+
+.diagnosisSubmit {
+   text-align: center;
 }

@@ -50,12 +50,12 @@ class SymptomsList extends React.Component {
         <div className='symptomsForm'>
       <ul>
         { symptomsArray.map(currentSymptom => <li key={currentSymptom.id}>
-              <label htmlFor={currentSymptom.name}>{currentSymptom.name}</label>
               <input
                 name={currentSymptom.name}
                 type="checkbox"
                 value={currentSymptom.id}
               />
+              <label htmlFor={currentSymptom.name}>{currentSymptom.name}</label>
             </li>)}
       </ul>
         </div>

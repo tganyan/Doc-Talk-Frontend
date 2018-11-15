@@ -1,11 +1,19 @@
-//.symptomsForm{
-//  width: 500px;
-//  height: 500px;
-//  border: solid black;
-//  border-size:2px;
-//  //display: block;
-//}
-.symptomsForm li {
-  padding:0;
-  margin-right:5px;
+@import '../../../style/variables';
+
+.symptomsForm {
+  margin-bottom: 3%;
+  background-color: $color-beigey-browny-something;
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    border: solid 2px;
+    padding: 3%;
+  }
+  li {
+    padding:0;
+    margin-right:5px;
+    width: 49%;
+    margin-bottom: 2%;
+  }
+
 }

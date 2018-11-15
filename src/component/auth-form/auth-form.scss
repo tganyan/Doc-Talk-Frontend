@@ -10,15 +10,15 @@
   a {
     margin: auto auto auto 15%;
   }
-
+  form input { // input box on signup and login
+    margin-top:10px;
+    width: 200px;
+    height: 30px;
+    margin-left: 15%;
+  }
 }
 
-form input { // input box on signup and login
-  margin-top:10px;
-  width: 200px;
-  height: 30px;
-  margin-left: 15%;
-}
+
 
 .button{ // button for signup and login in
   background: #fff;
