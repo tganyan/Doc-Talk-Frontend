@@ -4,7 +4,7 @@
 
 ### Current version
 
-1.1
+1.1.1
 
 ### Description
 - Doc-Talk is an app that's been created to allow users to possibly self-diagnosis their own condition. Our site is easy to use, we do require 
