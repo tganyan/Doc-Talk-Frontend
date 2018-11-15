@@ -20,11 +20,9 @@ class AuthRedirect extends React.Component {
     if (pathname === routes.ABOUT_US) {
       destinationRoute = routes.ABOUT_US;
     }
-    if (pathname === routes.DIAGOSIS_LIST) {
-      destinationRoute = routes.DIAGOSIS_LIST;
+    if (pathname === routes.DIAGNOSIS_LIST) {
+      destinationRoute = routes.DIAGNOSIS_LIST;
     }
-
-    console.log('DESTINATION_ROUTE', destinationRoute);
 
     return (
       <div>
