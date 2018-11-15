@@ -34,7 +34,6 @@ class AuthRedirect extends React.Component {
   }
 }
 
-
 AuthRedirect.propTypes = {
   token: PropTypes.string,
   location: PropTypes.object,
