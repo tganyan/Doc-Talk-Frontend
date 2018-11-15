@@ -83,7 +83,7 @@ class SymptomForm extends React.Component {
   render() {
 
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form onSubmit={this.handleSubmit} className='symptomsForm-container'>
         <h2 className='titleOnForm'>Get a Diagnosis</h2>
         <Symptoms/>
         <div className='diagnosisSubmit'>

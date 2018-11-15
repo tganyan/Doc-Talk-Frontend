@@ -14,14 +14,17 @@ class App extends React.Component {
         <BrowserRouter>
           <React.Fragment>
             <nav className='navStyle'>
-              <header>DocTalk</header>
+              <header>
+                <span className='logoHeader'>Doc</span>
+                <span className='logoHeaderSecondary'>Talk</span>
+              </header>
               <ul>
                 <li><Link to='/'>Home</Link></li>
-                <li><Link to='/account'>Account</Link></li>
+                <li><Link to='/dashboard'>Diagnosis</Link></li>
                 <li><Link to='/aboutus'>About Us</Link></li>
               </ul>
             </nav>
-            <div style={{ padding: '20px' }}>
+            <div>
               <Route path ='*' component={AuthRedirect}/>
               <Route exact path='/' component={Landing}/>
               <Route exact path='/signup' component={Landing}/>
@@ -31,6 +34,9 @@ class App extends React.Component {
               <Route exact path='/aboutus' component={AboutUs}/>
               <Route exact path='/diagnosislist' component={DiagnosisList}/>
             </div>
+            <footer>
+              <p>copyright &copy; 2018 <span className='teamName'>!teamtom</span></p>
+            </footer>
           </React.Fragment>
         </BrowserRouter>
       </div>
