@@ -15,7 +15,6 @@ describe('#AuthForm', () => {
     };
     const mountedForm = mount(<AuthForm/>);
     mountedForm.find('#authFormUsername').simulate('change', testEvent);
-    console.log(mountedForm.find('#authFormUsername'));
     expect(mountedForm.state().username).toEqual('kris');
   });
 
