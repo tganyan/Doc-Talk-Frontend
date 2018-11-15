@@ -46,37 +46,39 @@ class SymptomForm extends React.Component {
     const currentTimeInSeconds = Math.floor(currentDate.getTime() / 1000);
 
     return this.props.pGetMediToken()
-      .then((r) => {
-        console.log('response', r);
-        mediToken = this.props.mediToken.token;
-        let parsedMediToken = JSON.parse(mediToken);
-        const mediTokenExpiration = parsedMediToken.expTime;
-
+      .then((returnedMediToken) => {
+        mediToken = returnedMediToken;
+        const mediTokenExpiration = parseInt(returnedMediToken.payload.expTime);
+        console.log('exp time', mediTokenExpiration);
         if (mediTokenExpiration < currentTimeInSeconds) {
           return this.props.pRefreshMediToken()
             .then(() => {
-              mediToken = this.props.mediToken.token;
-              parsedMediToken = JSON.parse(mediToken);
+              return this.props.pGetMediToken(event)
+                .then((freshMediToken) => {
+                  mediToken = freshMediToken;
+                  return mediToken;
+                })
             })
             .catch((error) => {
               console.error(error);
             })
         }
+        else {
+          return mediToken;
+        }
+      })
+      .then((finalMediToken) => {
+        const query = `https://sandbox-healthservice.priaid.ch/diagnosis?symptoms=${symptoms}&gender=${gender}&year_of_birth=${age}&token=${finalMediToken.payload.token}&format=json&language=en-gb`;
+
+        return this.props.pGetDiagnosis(query)
+          .then(() => {
+            this.props.history.push(routes.DIAGOSIS_LIST);
+          })
+          .catch(error => {
+            console.error(error);
+          });
       })
       .catch((error) => {
-        console.error(error);
-      });
-
-    console.log(parsedMediToken);
-    const query = `https://sandbox-healthservice.priaid.ch/diagnosis?symptoms=${symptoms}&gender=${gender}&year_of_birth=${age}&token=${parsedMediToken.token}&format=json&language=en-gb`;
-
-    return this.props.pGetDiagnosis(query)
-      .then(() => {
-        console.log(this.props.mediToken);
-        console.log(this.props);
-        this.props.history.push(routes.DIAGOSIS_LIST);
-      })
-      .catch(error => {
         console.error(error);
       });
   };
