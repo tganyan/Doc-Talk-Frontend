@@ -7,7 +7,7 @@ class AboutUs extends React.Component {
 
         <section>
           <aside>
-            <img src="" alt=""/>
+            <img src="../../assets/jason.PNG" alt="Picture of Jason Hiskey"/>
           </aside>
           <h2>Jason Hiskey</h2>
           <div>
@@ -28,13 +28,13 @@ class AboutUs extends React.Component {
 
         <section>
           <aside>
-            <img src="" alt=""/>
+            <img src="../../assets/brai.PNG" alt="Picture of Ashabrai Frauen"/>
           </aside>
           <h2>Ashabrai Frauen</h2>
           <div>
             <p>
               I am Brai. I am a Junior Software Dev. I love creating and designing sites. In my
-              free time you’ll find me ether at a art gallery checking out new work or find me 
+              free time you’ll find me ether at a art gallery checking out new work or find me
               a flea market scoring cool vintage items.
             </p>
           </div>
@@ -42,17 +42,23 @@ class AboutUs extends React.Component {
 
         <section>
           <aside>
-            <img src="" alt=""/>
+            <img src="../../assets/tyler.PNG" alt="Picture of Tyler Anyan"/>
           </aside>
           <h2>Tyler Anyan</h2>
           <div>
-            <p></p>
+            <p>
+              I play some music, I build the interweb. I love me some Seahawks. Avid backpacker and
+              generally outdoorsy. I have a lengthy background in graphic design, marketing, and
+              front end development. Definite star wars geek; Luke Skywalker died for our sins
+              (spoiler alert). I love the thrill of solving a problem, and am extremely tenacious
+              in pursuit of said solutions.
+            </p>
           </div>
         </section>
 
          <section>
            <aside>
-             <img src="" alt=""/>
+             <img src="../../assets/kris.PNG" alt="Picture of Kris Esvelt"/>
            </aside>
            <h2>Kris Esvelt</h2>
            <div>
