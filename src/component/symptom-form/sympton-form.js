@@ -45,41 +45,40 @@ class SymptomForm extends React.Component {
     const currentDate = new Date();
     const currentTimeInSeconds = Math.floor(currentDate.getTime() / 1000);
 
-    return this.props.pGetMediToken();
+    return this.props.pGetMediToken()
+      .then((r) => {
+        console.log('response', r);
+        mediToken = this.props.mediToken.token;
+        let parsedMediToken = JSON.parse(mediToken);
+        const mediTokenExpiration = parsedMediToken.expTime;
 
-    // return this.props.pGetMediToken()
-    //   .then(() => {
-    //     mediToken = this.props.mediToken.token;
-    //     let parsedMediToken = JSON.parse(mediToken);
-    //     const mediTokenExpiration = parsedMediToken.expTime;
-    //
-    //     if (mediTokenExpiration < currentTimeInSeconds) {
-    //       return this.props.pRefreshMediToken()
-    //         .then(() => {
-    //           mediToken = this.props.mediToken.token;
-    //           parsedMediToken = JSON.parse(mediToken);
-    //         })
-    //         .catch((error) => {
-    //           console.error(error);
-    //         })
-    //     }
-    //   })
-    //   .catch((error) => {
-    //     console.error(error);
-    //   });
-    //
-    // console.log(parsedMediToken);
-    // const query = `https://sandbox-healthservice.priaid.ch/diagnosis?symptoms=${symptoms}&gender=${gender}&year_of_birth=${age}&token=${parsedMediToken.token}&format=json&language=en-gb`;
-    //
-    // return this.props.pGetDiagnosis(query)
-    //   .then(() => {
-    //     console.log(this.props.mediToken);
-    //     console.log(this.props);
-    //     this.props.history.push(routes.DIAGOSIS_LIST);
-    //   })
-    //   .catch(error => {
-    //     console.error(error);
-    //   });
+        if (mediTokenExpiration < currentTimeInSeconds) {
+          return this.props.pRefreshMediToken()
+            .then(() => {
+              mediToken = this.props.mediToken.token;
+              parsedMediToken = JSON.parse(mediToken);
+            })
+            .catch((error) => {
+              console.error(error);
+            })
+        }
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+
+    console.log(parsedMediToken);
+    const query = `https://sandbox-healthservice.priaid.ch/diagnosis?symptoms=${symptoms}&gender=${gender}&year_of_birth=${age}&token=${parsedMediToken.token}&format=json&language=en-gb`;
+
+    return this.props.pGetDiagnosis(query)
+      .then(() => {
+        console.log(this.props.mediToken);
+        console.log(this.props);
+        this.props.history.push(routes.DIAGOSIS_LIST);
+      })
+      .catch(error => {
+        console.error(error);
+      });
   };
 
   render() {
