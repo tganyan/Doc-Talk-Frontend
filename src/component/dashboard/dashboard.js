@@ -17,12 +17,9 @@ class Dashboard extends React.Component {
   }
 
   render() {
-    console.log(this.props);
     return (
       <section>
-
         <p className='title'>Hello! You are logged in</p>
-        {/* <SymptomsForm/> */}
         <SymptomsForm
           history={this.props.history}
         />

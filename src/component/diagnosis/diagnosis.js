@@ -8,7 +8,7 @@ class Diagnosis extends React.Component {
     return (
       <div>
         <h3>Diagnosis: {this.props.currentDiagnosis.Issue.Name}</h3>
-        <p>Accuracy of symptoms: <strong>{this.props.currentDiagnosis.Issue.Accuracy}%</strong></p>
+        <p>Accuracy of diagnosis: <strong>{this.props.currentDiagnosis.Issue.Accuracy}%</strong></p>
         <p>Recommended medical specialists: {this.props.currentDiagnosis.Specialisation
           .map((currentSpecialist, i) => <Specialist
             currentSpecialist={currentSpecialist}

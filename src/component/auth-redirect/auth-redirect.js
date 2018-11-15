@@ -23,6 +23,13 @@ class AuthRedirect extends React.Component {
     if (pathname === routes.DIAGOSIS_LIST) {
       destinationRoute = routes.DIAGOSIS_LIST;
     }
+    if (pathname === routes.DASHBOARD) {
+      if (!token || Object.getOwnPropertyNames(token).length === 0) {
+        destinationRoute = routes.LOGIN;
+      } else {
+        destinationRoute = routes.DASHBOARD;
+      }
+    }
 
     console.log('DESTINATION_ROUTE', destinationRoute);
 

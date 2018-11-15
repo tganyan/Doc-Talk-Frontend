@@ -7,6 +7,8 @@ import * as routes from '../../routes';
 import * as authActions from '../../action/auth';
 import AuthForm from '../auth-form/auth-form';
 
+// const testImg = require('../../assets/star-battle.jpg');
+
 import './landing.scss';
 
 
@@ -30,8 +32,10 @@ class Landing extends React.Component {
 
     render() {
         const rootJSX = <div className='auth-container'>
-            <Link to='/signup'><p>Sign up for DocTalk</p></Link>
-            <Link to='/login'><p>Login to DocTalk</p></Link>
+            <h3 className='landingBanner'>Welcome to DocTalk</h3>
+            <h5>Sign up or login below to get your free diagnosis</h5>
+            <Link to='/signup' className='buttonStyle'>Sign up for DocTalk</Link>
+            <Link to='/login' className='buttonStyle'>Login to DocTalk</Link>
         </div>;
 
         const signUpJSX = <div className='formStyle'>
@@ -58,7 +62,7 @@ class Landing extends React.Component {
         console.log(location);
 
         return (
-            <section>
+            <section className='mainContent'>
                 { location.pathname === routes.ROOT ? rootJSX : undefined }
                 { location.pathname === routes.SIGNUP ? signUpJSX : undefined }
                 { location.pathname === routes.LOGIN ? loginJSX : undefined }
