@@ -5,6 +5,4 @@ describe('#SearchForm', () => {
     const initialState = searchReducer(undefined, { type: 'INITIAL', payload: null });
     expect(initialState).toEqual({});
   });
-
-  test('')
 });
