@@ -11,7 +11,7 @@ class AuthRedirect extends React.Component {
     let destinationRoute = null;
     if (pathname === routes.LOGIN || pathname === routes.SIGNUP
       || pathname === routes.ROOT) {
-      if (token) {
+      if (token && Object.getOwnPropertyNames(token).length !== 0) {
         destinationRoute = routes.DASHBOARD;
       }
     } else if (!token) {
@@ -20,11 +20,16 @@ class AuthRedirect extends React.Component {
     if (pathname === routes.ABOUT_US) {
       destinationRoute = routes.ABOUT_US;
     }
-    if (pathname === routes.DIAGOSIS_LIST) {
-      destinationRoute = routes.DIAGOSIS_LIST;
+    if (pathname === routes.DIAGNOSIS_LIST) {
+      destinationRoute = routes.DIAGNOSIS_LIST;
     }
-
-    console.log('DESTINATION_ROUTE', destinationRoute);
+    if (pathname === routes.DASHBOARD) {
+      if (!token || Object.getOwnPropertyNames(token).length === 0) {
+        destinationRoute = routes.LOGIN;
+      } else {
+        destinationRoute = routes.DASHBOARD;
+      }
+    }
 
     return (
       <div>
@@ -33,7 +38,6 @@ class AuthRedirect extends React.Component {
     );
   }
 }
-
 
 AuthRedirect.propTypes = {
   token: PropTypes.string,

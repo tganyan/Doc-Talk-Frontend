@@ -1,16 +1,21 @@
 @import '../../../style/variables';
 
-.auth-container {
-  padding: 8%;
+.auth-container { // the two button sign up and login in to get to form
+  padding: 0 5% 0 5%;
   text-align: center;
   a {
     display: block;
-    margin-bottom: 2%;
+    margin-bottom: 3%;
     text-decoration: none;
-    color: $color-primary;
     font-weight: bold;
+    color: $color-primary;
     &:hover {
       color: $color-secondary;
     }
   }
 }
+
+//.loginsignupH3{ // the title for form
+//  text-align: center;
+//  margin-top: 30px;
+//}

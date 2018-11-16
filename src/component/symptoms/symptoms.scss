@@ -1,0 +1,30 @@
+@import '../../../style/variables';
+
+.symptomsForm {
+  margin-bottom: 3%;
+  width: 100%;
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    border: solid 2px;
+    padding: 3%;
+  }
+  li {
+    padding:0;
+    margin-right:5px;
+    width: 45%;
+    margin-bottom: 2%;
+
+    @media screen and (min-width: $desktop) and (max-width: $desktop-lg) {
+      width: 30%;
+    }
+
+    @media screen and (min-width: $desktop-lg) {
+      width: 18%;
+    }
+  }
+  &-container {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
