@@ -10,7 +10,8 @@
     "test": "jest --coverage",
     "watch": "webpack-dev-server --config webpack.dev.js",
     "start": "node index.js",
-    "heroku-postbuild": "webpack --progress --config webpack.prod.js"
+    "heroku-postbuild": "webpack --progress --config webpack.prod.js",
+    "webpack": "webpack-cli --config='config/webpack.config.js'"
   },
   "keywords": [],
   "author": "",
