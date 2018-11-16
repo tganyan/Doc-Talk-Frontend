@@ -1,0 +1,11 @@
+@import '../../../style/variables';
+
+.aboutContainer {
+  padding: 5% 10%;
+}
+
+.aboutItem {
+  margin-bottom: 3%;
+  padding: 3% 0 3% 0;
+  border-bottom: solid $color-accent;
+}
