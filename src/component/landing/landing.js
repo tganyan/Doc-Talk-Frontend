@@ -40,7 +40,7 @@ class Landing extends React.Component {
       <h3 className='loginsignupH3'>Sign Up</h3>
       <AuthForm
         type='signup'
-          onComplete={this.handleSignup}
+        onComplete={this.handleSignup}
       />
       <p className='account'>Already have an account?</p>
       <Link to='/login'> Login to DocTalk</Link>
@@ -60,7 +60,7 @@ class Landing extends React.Component {
     console.log(location);
 
     return (
-      <section className='mainContent'>
+      <section>
         { location.pathname === routes.ROOT ? rootJSX : undefined }
         { location.pathname === routes.SIGNUP ? signUpJSX : undefined }
         { location.pathname === routes.LOGIN ? loginJSX : undefined }

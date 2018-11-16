@@ -24,7 +24,7 @@ class App extends React.Component {
                 <li><Link to='/aboutus'>About Us</Link></li>
               </ul>
             </nav>
-            <div>
+            <div className='mainContent'>
               <Route path ='*' component={AuthRedirect}/>
               <Route exact path='/' component={Landing}/>
               <Route exact path='/signup' component={Landing}/>

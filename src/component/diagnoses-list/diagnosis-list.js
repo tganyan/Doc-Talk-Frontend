@@ -4,11 +4,13 @@ import PropTypes from 'prop-types';
 
 import Diagnosis from '../diagnosis/diagnosis';
 
+import './diagnosis-list.scss';
+
 class DiagnosisList extends React.Component {
   render() {
     return (
-      <section>
-        <h3>Possible Diagnosis ranked in order of likelihood</h3>
+      <section className='resultsSection'>
+        <h2 className='spacing-lg-bot'>Possible Diagnosis ranked in order of likelihood</h2>
         {this.props.diagnosisResults.map((currentDiagnosis, i) => <Diagnosis
           currentDiagnosis={currentDiagnosis}
           key={i}

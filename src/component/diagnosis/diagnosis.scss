@@ -1,0 +1,15 @@
+@import '../../../style/variables';
+
+.resultItem {
+  border-bottom: solid 1px;
+  padding: 4% 0 3% 0;
+
+  @media screen and (min-width: $desktop){
+    padding: 2% 0 1% 0;
+  }
+}
+
+.resultHighLight {
+  color: $color-highlight;
+  font-weight: bold;
+}
