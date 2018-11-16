@@ -1,14 +1,15 @@
 import React from 'react';
 
+import './aboutus.scss';
+
 class AboutUs extends React.Component {
   render() {
     return (
-      <section>
-
-        <section>
-          <aside>
-            <img src="../../assets/jason.PNG" alt="Picture of Jason Hiskey"/>
-          </aside>
+      <section className='aboutContainer'>
+        <section className='aboutItem'>
+          {/*<aside>*/}
+            {/*<img src="../../assets/jason.PNG" alt="Picture of Jason Hiskey"/>*/}
+          {/*</aside>*/}
           <h2>Jason Hiskey</h2>
           <div>
             <p>Jason was born in Colorado Springs, Colorado. When he was 2 years old he moved to
@@ -26,10 +27,10 @@ class AboutUs extends React.Component {
           </div>
         </section>
 
-        <section>
-          <aside>
-            <img src="../../assets/brai.PNG" alt="Picture of Ashabrai Frauen"/>
-          </aside>
+        <section className='aboutItem'>
+          {/*<aside>*/}
+            {/*<img src="../../assets/brai.PNG" alt="Picture of Ashabrai Frauen"/>*/}
+          {/*</aside>*/}
           <h2>Ashabrai Frauen</h2>
           <div>
             <p>
@@ -40,10 +41,10 @@ class AboutUs extends React.Component {
           </div>
         </section>
 
-        <section>
-          <aside>
-            <img src="../../assets/tyler.PNG" alt="Picture of Tyler Anyan"/>
-          </aside>
+        <section className='aboutItem'>
+          {/*<aside>*/}
+            {/*<img src="../../assets/tyler.PNG" alt="Picture of Tyler Anyan"/>*/}
+          {/*</aside>*/}
           <h2>Tyler Anyan</h2>
           <div>
             <p>
@@ -56,10 +57,10 @@ class AboutUs extends React.Component {
           </div>
         </section>
 
-         <section>
-           <aside>
-             <img src="../../assets/kris.PNG" alt="Picture of Kris Esvelt"/>
-           </aside>
+         <section className='aboutItem'>
+           {/*<aside>*/}
+             {/*<img src="../../assets/kris.PNG" alt="Picture of Kris Esvelt"/>*/}
+           {/*</aside>*/}
            <h2>Kris Esvelt</h2>
            <div>
              <p>
