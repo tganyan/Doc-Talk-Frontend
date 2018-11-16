@@ -4,27 +4,27 @@ import { BrowserRouter, Route, Link } from 'react-router-dom';
 import Landing from '../landing/landing';
 import Dashboard from '../dashboard/dashboard';
 import AboutUs from '../aboutus/aboutus';
-import Account from '../user-account/user-account';
 import AuthRedirect from '../auth-redirect/auth-redirect';
 import DiagnosisList from '../diagnoses-list/diagnosis-list';
 
 class App extends React.Component {
   render() {
     return (
-      <div>
+      <div className='bigWhiteBox'>
         <BrowserRouter>
           <React.Fragment>
-            <Link to='/'><h2>DocTalk</h2></Link>
-            <nav>
+            <nav className='navStyle'>
+              <header>
+                <span className='logoHeader'>Doc</span>
+                <span className='logoHeaderSecondary'>Talk</span>
+              </header>
               <ul>
-                <Link to='/'><li>Home</li></Link>
-                <Link to='/chatroomlist'><li>Chatrooms</li></Link>
-                <Link to='/account'><li>Account</li></Link>
-                <Link to='/aboutus'><li>About Us</li></Link>
-                <Link to='/diagnosislist'><li>List</li></Link>
+                <li><Link to='/'>Home</Link></li>
+                <li><Link to='/dashboard'>Diagnosis</Link></li>
+                <li><Link to='/aboutus'>About Us</Link></li>
               </ul>
             </nav>
-            <div style={{ padding: '20px' }}>
+            <div>
               <Route path ='*' component={AuthRedirect}/>
               <Route exact path='/' component={Landing}/>
               <Route exact path='/signup' component={Landing}/>
@@ -34,6 +34,9 @@ class App extends React.Component {
               <Route exact path='/aboutus' component={AboutUs}/>
               <Route exact path='/diagnosislist' component={DiagnosisList}/>
             </div>
+            <footer>
+              <p>copyright &copy; 2018 <span className='teamName'>!teamtom</span></p>
+            </footer>
           </React.Fragment>
         </BrowserRouter>
       </div>
