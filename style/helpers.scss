@@ -3,3 +3,10 @@
 .spacing-none {
   margin: 0;
 }
+
+.spacing-lg-bot {
+  margin-bottom: 5%;
+  @media screen and (min-width: $desktop){
+    margin-bottom: 1%;
+  }
+}

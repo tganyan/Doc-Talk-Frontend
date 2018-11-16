@@ -62,7 +62,7 @@ class Landing extends React.Component {
         console.log(location);
 
         return (
-            <section className='mainContent'>
+            <section>
                 { location.pathname === routes.ROOT ? rootJSX : undefined }
                 { location.pathname === routes.SIGNUP ? signUpJSX : undefined }
                 { location.pathname === routes.LOGIN ? loginJSX : undefined }
