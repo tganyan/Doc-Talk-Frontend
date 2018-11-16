@@ -40,7 +40,7 @@ class Landing extends React.Component {
       <h3 className='loginsignupH3'>Sign Up</h3>
       <AuthForm
         type='signup'
-          onComplete={this.handleSignup}
+        onComplete={this.handleSignup}
       />
       <p className='account'>Already have an account?</p>
       <Link to='/login'> Login to DocTalk</Link>
