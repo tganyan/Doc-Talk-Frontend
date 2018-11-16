@@ -138,9 +138,13 @@ header{
 
 .mainContent {
   padding-top: 25%;
-  height: calc(100vh - 30px);
+  height: calc(180vh - 30px);
   @media screen and (min-width: $desktop) {
     padding-top: 10%;
+    height: calc(160vh - 30px);
+  }
+  @media screen and (min-width: $desktop-lg) {
+    height: calc(180vh - 30px);
   }
   @media screen and (min-width: $tablet) and (max-width: $desktop){
     padding-top: 20%;
