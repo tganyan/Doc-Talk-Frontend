@@ -15,14 +15,6 @@ describe('#AuthForm', () => {
     };
     const mountedForm = mount(<AuthForm/>);
     mountedForm.find('#authFormUsername').simulate('change', testEvent);
-    console.log(mountedForm.find('#authFormUsername'));
     expect(mountedForm.state().username).toEqual('kris');
   });
-
-  // test('The onComplete function is successfully called upon form submit', () => {
-  //   const mountedForm = mount(<AuthForm/>);
-  //   mountedForm.setProps({ onComplete: jest.fn() });
-  //   mountedForm.simulate('submit', { preventDefault: () => {} });
-  //   expect(mountedForm.props().onComplete).toHaveBeenCalled();
-  // });
 });

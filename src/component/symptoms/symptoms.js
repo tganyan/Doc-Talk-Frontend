@@ -47,18 +47,18 @@ const symptomsArray = [
 class SymptomsList extends React.Component {
   render() {
     return (
-        <div className='symptomsForm'>
-      <ul>
-        { symptomsArray.map(currentSymptom => <li key={currentSymptom.id}>
-              <input
-                name={currentSymptom.name}
-                type="checkbox"
-                value={currentSymptom.id}
-              />
-              <label htmlFor={currentSymptom.name}>{currentSymptom.name}</label>
-            </li>)}
-      </ul>
-        </div>
+      <div className='symptomsForm'>
+        <ul>
+          { symptomsArray.map(currentSymptom => <li key={currentSymptom.id}>
+            <input
+              name={currentSymptom.name}
+              type="checkbox"
+              value={currentSymptom.id}
+            />
+            <label htmlFor={currentSymptom.name}>{currentSymptom.name}</label>
+          </li>)}
+        </ul>
+      </div>
     );
   }
 }

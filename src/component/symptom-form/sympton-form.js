@@ -4,10 +4,9 @@ import PropTypes from 'prop-types';
 import * as searchActions from '../../action/search';
 import { connect } from 'react-redux';
 
-import '../symptom-form/symptom-form.scss';
-
 import * as routes from '../../routes';
 
+import '../symptom-form/symptom-form.scss';
 
 class SymptomForm extends React.Component {
   constructor(props) {
@@ -28,11 +27,9 @@ class SymptomForm extends React.Component {
     for (let i = 0; i < inputLength; i++) {
       if (inputFields[i].type === 'checkbox' && inputFields[i].checked === true) {
         this.state.symptomKeys.push(inputFields[i].value);
-        console.log(inputFields[i].value);
       }
     }
     const symptomString = `[${this.state.symptomKeys.toString()}]`;
-
     return symptomString;
   };
 
@@ -72,7 +69,7 @@ class SymptomForm extends React.Component {
 
         return this.props.pGetDiagnosis(query)
           .then(() => {
-            this.props.history.push(routes.DIAGOSIS_LIST);
+            this.props.history.push(routes.DIAGNOSIS_LIST);
           })
           .catch(error => {
             console.error(error);
@@ -87,7 +84,7 @@ class SymptomForm extends React.Component {
 
     return (
       <form onSubmit={this.handleSubmit} className='symptomsForm-container'>
-        <h2>Get a Diagnosis</h2>
+        <h2 className='titleOnForm'>Get a Diagnosis</h2>
         <Symptoms/>
         <div className='diagnosisSubmit'>
           <input
